@@ -1,11 +1,11 @@
 import sys
-
 import pygame
 
 from settings import Settings
 from ship import Ship
 from bullet import Bullet
 from alien import Alien
+
 
 
 class AlienInvasion:
@@ -77,16 +77,16 @@ class AlienInvasion:
         # Update bullet positions.
         self.bullets.update()
     
-
         # Get rid of bullets that have disappeared.
         for bullet in self.bullets.copy():
             if bullet.rect.bottom <= 0:
                 self.bullets.remove(bullet)
+
     def _update_aliens(self):
-        """Check if the fleet is at an edge, then update positons."""
+        """Check if the fleet is at an edge, then update positions."""
         self._check_fleet_edges()
         self.aliens.update()
-        
+
     def _create_fleet(self):
         """Create the fleet of aliens."""
         # Create an alien and keep adding aliens until there's no room left.
@@ -111,17 +111,18 @@ class AlienInvasion:
         new_alien.rect.x = x_position
         new_alien.rect.y = y_position
         self.aliens.add(new_alien)
-        
+
     def _check_fleet_edges(self):
         """Respond appropriately if any aliens have reached the edge."""
         for alien in self.aliens.sprites():
             if alien.check_edges():
                 self._change_fleet_direction()
                 break
+
     def _change_fleet_direction(self):
         """Drop the entire fleet and change the fleet's direction."""
         for alien in self.aliens.sprites():
-            self.rect.y += self.settings.fleet_drop_speed
+            alien.rect.y += self.settings.fleet_drop_speed 
         self.settings.fleet_direction *= -1
 
     def _update_screen(self):
@@ -133,7 +134,6 @@ class AlienInvasion:
         self.aliens.draw(self.screen)
 
         pygame.display.flip()
-
 
 if __name__ == '__main__':
     # Make a game instance, and run the game.
