@@ -85,6 +85,7 @@ class AlienInvasion:
             # Reset the game settings.
             self.settings.initialize_dynamic_settings()
             self._start_game()
+            self.sb.prep_score()
 
     def _check_keydown_events(self, event):
         """Respond to keypresses."""
