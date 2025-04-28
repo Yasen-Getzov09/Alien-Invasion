@@ -133,6 +133,7 @@ class AlienInvasion:
             for aliens in collisions.values():
                 self.stats.score += self.settings.alien_points * len(aliens)
             self.sb.prep_score()
+            self.sb.check_high_score()
         if not self.aliens:
             # Destroy existing bullets and create new fleet.
             self.bullets.empty()
@@ -221,7 +222,8 @@ class AlienInvasion:
 
     def _update_screen(self):
         """Update images on the screen, and flip to the new screen."""
-        self.screen.fill(self.settings.bg_color)
+        self.screen.fill((0, 0, 0))  # По избор, запълваме екрана с черно (по подразбиране)
+        self.screen.blit(self.settings.bg_image, (0, 0))
         for bullet in self.bullets.sprites():
             bullet.draw_bullet()
         self.ship.blitme()
