@@ -1,6 +1,5 @@
 # 👾 Alien Invasion
 
-![Alien Invasion](https://images.unsplash.com/photo-1549921296-3a73e218a6b0?auto=format&fit=crop&w=1200&q=80)
 
 A classic arcade-style **space shooter** game built using **Python** and **Pygame**, inspired by the *Alien Invasion* project from *Python Crash Course* by Eric Matthes.
 
@@ -79,7 +78,7 @@ alien_invasion/
 ## 🧠 Based On
 
 This game is based on the **Alien Invasion** project in the book:  
-📘 *Python Crash Course* by Eric Matthes – 2nd Edition
+📘 *Python Crash Course* by Eric Matthes – 3rd Edition
 
 ---
 
